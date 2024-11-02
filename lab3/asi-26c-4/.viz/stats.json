@@ -1,0 +1,1 @@
+{"employees": {"rows": 100000, "columns": 20, "file_size": 11243502}, "preprocessed_employees": {"rows": 100000, "columns": 18}, "processed_employees": {"rows": 100000, "columns": 18}, "postProcessed_employees": {"rows": 100000, "columns": 19, "file_size": 1099228}}

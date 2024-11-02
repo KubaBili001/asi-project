@@ -1,0 +1,23 @@
+employees:
+  type: pandas.CSVDataset
+  filepath: data/01_raw/Extended_Employee_Performance_and_Productivity_Data.csv
+  load_args:
+    sep: ','
+
+columnsToDrop:
+  type: MemoryDataset
+  data:
+    - Employee_ID
+    - Hire_Date
+
+columnsToEncode:
+  type: MemoryDataset
+  data:
+    - Department
+    - Gender
+    - Job_Title
+    - Education_Level
+
+postProcessed_employees:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/postProcessed_employees.pq
