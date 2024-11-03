@@ -21,3 +21,59 @@ columnsToEncode:
 postProcessed_employees:
   type: pandas.ParquetDataset
   filepath: data/02_intermediate/postProcessed_employees.pq
+
+verified_employees:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/verified_employees.pq
+
+corelation_matrix_vizualization:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/corelation_matrix_vizualization.png
+
+satisfaction_score_distribution:
+  type: matplotlib.MatplotlibWriter
+  filepath: data/08_reporting/satisfaction_score_distribution.png
+
+postProcessed_employees_after_satviz:
+  type: pandas.ParquetDataset
+  filepath: data/02_intermediate/postProcessed_employees_after_satviz.pq
+
+regressor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/regressor.pkl
+
+decisionTreeRegressor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/decisionTreeRegressor.pkl
+
+randomForestRegressor:
+  type: pickle.PickleDataset
+  filepath: data/06_models/randomForestRegressor.pkl
+
+y_pred_lr:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/y_pred_lr.csv
+
+y_pred_dt:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/y_pred_dt.csv
+
+y_pred_rf:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/y_pred_rf.csv
+
+y_test:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/y_test.csv
+
+x_test:
+  type: pandas.CSVDataset
+  filepath: data/05_model_input/x_test.csv
+
+scores_lr:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/scores_lr.csv
+
+scores_dt:
+  type: pandas.CSVDataset
+  filepath: data/07_model_output/scores_dt.csv

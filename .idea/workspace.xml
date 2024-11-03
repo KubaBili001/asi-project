@@ -1,10 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="2a783243-8e79-4215-be23-f31224c80c4b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Lab1/ASI_EmployeeSatisfactionScore_Prediction.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Lab1/ASI_EmployeeSatisfactionScore_Prediction.ipynb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_data_verification.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_data_vizualization.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_machine_learning.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_model_evaluation.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_verification/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_verification/nodes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_verification/pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_vizualization/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_vizualization/nodes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_vizualization/pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/nodes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/model_evaluation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/model_evaluation/nodes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/model_evaluation/pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/data_verification/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/data_verification/test_pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/data_vizualization/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/data_vizualization/test_pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/machine_learning/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/machine_learning/test_pipeline.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/model_evaluation/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/model_evaluation/test_pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/.viz/stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/.viz/stats.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/catalog.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/catalog.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/session_store.db" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/session_store.db" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list id="29270d10-65a9-4960-9933-ac9d9a4b7c2c" name="Changes by maksd" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +56,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
       <list>
@@ -40,6 +73,10 @@
     <option name="x" value="955" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
+  </component>
+  <component name="ProjectId" id="2oKx9npB8CfmuDd5B0sqxpQ7ITP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -65,22 +102,26 @@
       <pane id="Scope" />
     </panes>
   </component>
-  <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "last_opened_file_path": "C:/Users/micha/Documents/GitHub/asi-project",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2a783243-8e79-4215-be23-f31224c80c4b" name="Default Changelist" comment="" />
@@ -88,6 +129,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729581671705</updated>
+      <workItem from="1730631920483" duration="10740000" />
     </task>
     <servers />
   </component>
@@ -112,6 +154,12 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Lab2/ASI_EmployeeSatisfactionScore_Prediction.py">

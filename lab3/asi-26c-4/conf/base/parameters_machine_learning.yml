@@ -1,0 +1,16 @@
+# This is a boilerplate parameters config generated for pipeline 'machine_learning'
+# using Kedro 0.19.9.
+#
+# Documentation for this file format can be found in "Parameters"
+# Link: https://docs.kedro.org/en/0.19.9/configuration/parameters.html
+
+test_size: 0.3
+
+random_state: 42
+
+n_splits: 10
+
+n_estimators: 100
+
+label_to_drop:
+  - Employee_Satisfaction_Score
