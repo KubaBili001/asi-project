@@ -5,36 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2a783243-8e79-4215-be23-f31224c80c4b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_data_verification.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_data_vizualization.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_machine_learning.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_model_evaluation.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_verification/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_verification/nodes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_verification/pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_vizualization/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_vizualization/nodes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/data_vizualization/pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/nodes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/model_evaluation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/model_evaluation/nodes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/model_evaluation/pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/data_verification/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/data_verification/test_pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/data_vizualization/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/data_vizualization/test_pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/machine_learning/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/machine_learning/test_pipeline.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/model_evaluation/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lab3/asi-26c-4/tests/pipelines/model_evaluation/test_pipeline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/.viz/stats.json" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/.viz/stats.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/catalog.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/catalog.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/session_store.db" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/session_store.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/nodes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/model_evaluation/nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/model_evaluation/nodes.py" afterDir="false" />
     </list>
-    <list id="29270d10-65a9-4960-9933-ac9d9a4b7c2c" name="Changes by maksd" comment="" />
+    <list id="29270d10-65a9-4960-9933-ac9d9a4b7c2c" name="Changes by maksd" comment="">
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/catalog.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/catalog.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_machine_learning.yml" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/conf/base/parameters_machine_learning.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/nodes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/pipeline.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,6 +37,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/lab3/asi-26c-4/src/asi_26c_4/pipelines/machine_learning/nodes.py">
+      <ranges>
+        <range start1="21" end1="25" start2="21" end2="45" changelist="2a783243-8e79-4215-be23-f31224c80c4b" />
+        <range start1="35" end1="36" start2="55" end2="57" changelist="29270d10-65a9-4960-9933-ac9d9a4b7c2c" />
+        <range start1="47" end1="48" start2="68" end2="70" changelist="2a783243-8e79-4215-be23-f31224c80c4b" />
+        <range start1="60" end1="61" start2="82" end2="83" changelist="29270d10-65a9-4960-9933-ac9d9a4b7c2c" />
+        <range start1="67" end1="69" start2="89" end2="91" changelist="2a783243-8e79-4215-be23-f31224c80c4b" />
+        <range start1="70" end1="70" start2="92" end2="95" changelist="2a783243-8e79-4215-be23-f31224c80c4b" />
+      </ranges>
+    </file>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -129,7 +123,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729581671705</updated>
-      <workItem from="1730631920483" duration="10740000" />
+      <workItem from="1730631920483" duration="16675000" />
     </task>
     <servers />
   </component>

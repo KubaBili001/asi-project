@@ -19,10 +19,30 @@ def prepareSets(df, label_name):
     return x, y
 
 
-def splitData(x, y, train_size, random_state):
-    x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=train_size, random_state=random_state)
-    y_test = pd.DataFrame(y_test, columns=['y_test_set'])
-    x_test = pd.DataFrame(x_test, columns=['x_test_set'])
+def splitData(x, y,test_size,train_size, random_state):
+    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=test_size, train_size=train_size, random_state=random_state)
+    print(y_test)
+    #y_test = pd.DataFrame(y_test, columns=['y_test_set'])
+    y_test = pd.DataFrame(y_test).reset_index(drop=True)
+    y_test.columns = ['y_test_set']
+    x_test = pd.DataFrame(x_test, columns=['Department',
+                                           'Gender',
+                                           'Age',
+                                           'Job_Title',
+                                           'Years_At_Company',
+                                           'Education_Level',
+                                           'Performance_Score',
+                                           'Monthly_Salary',
+                                           'Work_Hours_Per_Week',
+                                           'Projects_Handled',
+                                           'Overtime_Hours',
+                                           'Sick_Days',
+                                           'Remote_Work_Frequency',
+                                           'Team_Size',
+                                           'Training_Hours',
+                                           'Promotions',
+                                           'Resigned',
+                                           'Overtime_Ratio'])
     return x_train, x_test, y_train, y_test
 
 
@@ -33,7 +53,8 @@ def trainLinearRegression(x_train, y_train):
 
 
 def predictLinearRegression(lin_reg, x_test):
-    x_test = x_test.to_numpy()[0]
+    x_test = x_test.to_numpy()
+    print("x_test shape: ", x_test.shape)
     y_pred = lin_reg.predict(x_test)
     y_pred = pd.DataFrame(y_pred, columns=['prediction'])
     return y_pred
@@ -45,7 +66,8 @@ def trainDecisionTree(x_train, y_train, random_state):
     return regressor
 
 def predictDecisionTree(regressor, x_test):
-    x_test = x_test.to_numpy()[0]
+    #x_test = x_test.to_numpy()
+    print("x_test shape: ", x_test.shape)
     y_pred = regressor.predict(x_test)
     y_pred = pd.DataFrame(y_pred, columns=['prediction'])
     return y_pred
@@ -58,16 +80,19 @@ def trainRandomForestRegressor(x_train, y_train, n_estimators, random_state):
 
 
 def predictRandomForestRegressor(rf_reg, x_test):
-    x_test = x_test.to_numpy()[0]
+    x_test = x_test.to_numpy()
     y_pred = rf_reg.predict(x_test)
     y_pred = pd.DataFrame(y_pred, columns=['prediction'])
     return y_pred
 
 
 def crossValidate(model, x_train, y_train, n_splits):
-    x_train = x_train.to_numpy()[0]
-    y_train = y_train.to_numpy()[0]
+    x_train = x_train.to_numpy()
+    y_train = y_train.to_numpy()
     k_folds = KFold(n_splits=n_splits)
+    print("x_train shape: ", x_train.shape)
+    print("y_train shape: ", y_train.shape)
+    #x_train = x_train.reshape(X_train.shape[1:])
 
     scores = cross_val_score(model, x_train, y_train, cv=k_folds)
     scores = pd.DataFrame(scores, columns=['scores'])

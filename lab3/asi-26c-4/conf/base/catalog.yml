@@ -66,14 +66,14 @@ y_test:
   type: pandas.CSVDataset
   filepath: data/05_model_input/y_test.csv
 
-x_test:
+X_test:
   type: pandas.CSVDataset
   filepath: data/05_model_input/x_test.csv
 
-scores_lr:
+Scores_lr:
   type: pandas.CSVDataset
   filepath: data/07_model_output/scores_lr.csv
 
-scores_dt:
+Scores_dt:
   type: pandas.CSVDataset
   filepath: data/07_model_output/scores_dt.csv
