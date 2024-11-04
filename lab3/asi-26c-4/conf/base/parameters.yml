@@ -1,3 +1,7 @@
 new_col_name: "Overtime_Ratio"
 Overtime_Hours: "Overtime_Hours"
 Work_Hours_Per_Week: "Work_Hours_Per_Week"
+
+wandb:
+  project_name: "kedro_supervision"
+  enable_logging: true

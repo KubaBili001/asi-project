@@ -1,0 +1,14 @@
+wandb:
+  project: "asi_26c"
+  run:
+    job_type: "train"
+    dir: "data/08_reporting"
+    log_code: true
+    sync_tensorboard: false
+    tags:
+      - kedro
+      - machine_learning
+    config:
+      random_state: 42
+      n_estimators: 100
+      n_splits: 5

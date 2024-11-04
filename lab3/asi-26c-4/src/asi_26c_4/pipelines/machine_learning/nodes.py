@@ -9,6 +9,7 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 import numpy as np
 import pandas as pd
+import wandb
 
 
 def prepareSets(df, label_name):
@@ -47,42 +48,64 @@ def splitData(x, y,test_size,train_size, random_state):
 
 
 def trainLinearRegression(x_train, y_train):
-    lin_reg = LinearRegression()
-    lin_reg.fit(x_train, y_train)
+    with wandb.init(project="asi_26c", job_type="train", name="LinearRegression_Training") as run:
+        lin_reg = LinearRegression()
+        lin_reg.fit(x_train, y_train)
+        wandb.config.update({"model": "LinearRegression"}, allow_val_change=True)
+        wandb.log({"training_score": lin_reg.score(x_train, y_train)})
     return lin_reg
 
 
 def predictLinearRegression(lin_reg, x_test):
-    x_test = x_test.to_numpy()
-    print("x_test shape: ", x_test.shape)
-    y_pred = lin_reg.predict(x_test)
-    y_pred = pd.DataFrame(y_pred, columns=['prediction'])
+    with wandb.init(project="asi_26c", job_type="predict", name="LinearRegression_Prediction") as run:
+        x_test = x_test.to_numpy()
+        print("x_test shape: ", x_test.shape)
+        y_pred = lin_reg.predict(x_test)
+        y_pred = pd.DataFrame(y_pred, columns=['prediction'])
+        wandb.log({"predictions": y_pred.head(200).to_dict()})
+        wandb.finish()
     return y_pred
 
 
 def trainDecisionTree(x_train, y_train, random_state):
-    regressor = DecisionTreeRegressor(random_state=random_state)
-    regressor.fit(x_train, y_train)
+    with wandb.init(project="asi_26c", job_type="train", name="DecisionTree_Training") as run:
+        regressor = DecisionTreeRegressor(random_state=random_state)
+        regressor.fit(x_train, y_train)
+
+        wandb.config.update({"model": "DecisionTree", "random_state": random_state}, allow_val_change=True)
+        wandb.log({"training_score": regressor.score(x_train, y_train)})
     return regressor
 
 def predictDecisionTree(regressor, x_test):
-    #x_test = x_test.to_numpy()
-    print("x_test shape: ", x_test.shape)
-    y_pred = regressor.predict(x_test)
-    y_pred = pd.DataFrame(y_pred, columns=['prediction'])
+    with wandb.init(project="asi_26c", job_type="predict", name="DecisionTree_Prediction") as run:
+        #x_test = x_test.to_numpy()
+        print("x_test shape: ", x_test.shape)
+        y_pred = regressor.predict(x_test)
+        y_pred = pd.DataFrame(y_pred, columns=['prediction'])
+        wandb.log({"predictions": y_pred.head(200).to_dict()})
+        wandb.finish()
     return y_pred
 
 
 def trainRandomForestRegressor(x_train, y_train, n_estimators, random_state):
-    regressor = RandomForestRegressor(n_estimators=n_estimators, random_state=random_state)
-    regressor.fit(x_train, y_train)
+    with wandb.init(project="asi_26c", job_type="train", name="RandomForest_Training") as run:
+        regressor = RandomForestRegressor(n_estimators=n_estimators, random_state=random_state)
+        regressor.fit(x_train, y_train)
+
+        wandb.config.update({"model": "RandomForest", "n_estimators": n_estimators, "random_state": random_state}, allow_val_change=True)
+        wandb.log({"training_score": regressor.score(x_train, y_train)})
     return regressor
 
 
 def predictRandomForestRegressor(rf_reg, x_test):
-    x_test = x_test.to_numpy()
-    y_pred = rf_reg.predict(x_test)
-    y_pred = pd.DataFrame(y_pred, columns=['prediction'])
+    with wandb.init(project="asi_26c", job_type="predict", name="RandomForest_Prediction") as run:
+
+        x_test = x_test.to_numpy()
+        y_pred = rf_reg.predict(x_test)
+        y_pred = pd.DataFrame(y_pred, columns=['prediction'])
+
+        wandb.log({"predictions": y_pred.head(200).to_dict()})
+        wandb.finish()
     return y_pred
 
 
