@@ -62,7 +62,8 @@ def predictLinearRegression(lin_reg, x_test):
         print("x_test shape: ", x_test.shape)
         y_pred = lin_reg.predict(x_test)
         y_pred = pd.DataFrame(y_pred, columns=['prediction'])
-        wandb.log({"predictions": y_pred.head(200).to_dict()})
+        wandb.config.update({"model": "LinearRegression"}, allow_val_change=True)
+        wandb.log({"predictions": y_pred.head(5).to_dict()})
         wandb.finish()
     return y_pred
 
@@ -82,7 +83,7 @@ def predictDecisionTree(regressor, x_test):
         print("x_test shape: ", x_test.shape)
         y_pred = regressor.predict(x_test)
         y_pred = pd.DataFrame(y_pred, columns=['prediction'])
-        wandb.log({"predictions": y_pred.head(200).to_dict()})
+        wandb.log({"predictions": y_pred.head(5).to_dict()})
         wandb.finish()
     return y_pred
 
@@ -104,7 +105,7 @@ def predictRandomForestRegressor(rf_reg, x_test):
         y_pred = rf_reg.predict(x_test)
         y_pred = pd.DataFrame(y_pred, columns=['prediction'])
 
-        wandb.log({"predictions": y_pred.head(200).to_dict()})
+        wandb.log({"predictions": y_pred.head(5).to_dict()})
         wandb.finish()
     return y_pred
 
