@@ -62,7 +62,6 @@ def predictLinearRegression(lin_reg, x_test):
         print("x_test shape: ", x_test.shape)
         y_pred = lin_reg.predict(x_test)
         y_pred = pd.DataFrame(y_pred, columns=['prediction'])
-        wandb.config.update({"model": "LinearRegression"}, allow_val_change=True)
         wandb.log({"predictions": y_pred.head(5).to_dict()})
         wandb.finish()
     return y_pred
@@ -111,13 +110,15 @@ def predictRandomForestRegressor(rf_reg, x_test):
 
 
 def crossValidate(model, x_train, y_train, n_splits):
-    x_train = x_train.to_numpy()
-    y_train = y_train.to_numpy()
-    k_folds = KFold(n_splits=n_splits)
-    print("x_train shape: ", x_train.shape)
-    print("y_train shape: ", y_train.shape)
-    #x_train = x_train.reshape(X_train.shape[1:])
+    with wandb.init(project="asi_26c", job_type="cross_validation", name="CrossValidation") as run:
+        x_train = x_train.to_numpy()
+        y_train = y_train.to_numpy()
+        k_folds = KFold(n_splits=n_splits)
+        print("x_train shape: ", x_train.shape)
+        print("y_train shape: ", y_train.shape)
+        #x_train = x_train.reshape(X_train.shape[1:])
 
-    scores = cross_val_score(model, x_train, y_train, cv=k_folds)
-    scores = pd.DataFrame(scores, columns=['scores'])
-    return scores
+        scores = cross_val_score(model, x_train, y_train, cv=k_folds)
+        scores = pd.DataFrame(scores, columns=['scores'])
+        wandb.log({"cv_results": scores})
+        return scores
