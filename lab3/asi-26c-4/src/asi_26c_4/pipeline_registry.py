@@ -29,6 +29,7 @@ def register_pipelines():
         "autogluon" : autogluon_pipeline,
         "__default__": (
             data_processing_pipeline + data_verification_pipeline +
-            data_viz_pipeline + machine_learning_pipeline + model_evaluation_pipeline + autogluon_pipeline
+            data_viz_pipeline + machine_learning_pipeline + model_evaluation_pipeline
+            + autogluon_pipeline
         )
     }

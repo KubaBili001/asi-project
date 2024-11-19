@@ -22,6 +22,12 @@ def create_pipeline(**kwargs) -> Pipeline:
             name="crossValidationEvaluationLinearRegression_node"
         ),
         node(
+            func=createLearningCurve,
+            inputs=["X_train", "y_train", "regressor"],
+            outputs=None,
+            name="linearregression_learningcurve_node"
+        ),
+        node(
             func=evaluateModel,
             inputs=["y_test", "X_test", "y_pred_dt", "decisionTreeRegressor"],
             outputs=None,
@@ -32,6 +38,12 @@ def create_pipeline(**kwargs) -> Pipeline:
             inputs=["Scores_dt"],
             outputs=None,
             name="crossValidationEvaluationDecisionTree_node"
+        ),
+        node(
+            func=createLearningCurve,
+            inputs=["X_train", "y_train", "decisionTreeRegressor"],
+            outputs=None,
+            name="decisionTreeRegressor_learningcurve_node"
         ),
         node(
             func=evaluateModel,

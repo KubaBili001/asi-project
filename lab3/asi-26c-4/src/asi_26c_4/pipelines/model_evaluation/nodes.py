@@ -5,6 +5,8 @@ generated using Kedro 0.19.9
 from sklearn.metrics import mean_squared_error
 import numpy as np
 import wandb
+from sklearn.model_selection import learning_curve
+import matplotlib.pyplot as plt
 
 
 
@@ -24,6 +26,31 @@ def evaluateModel(y_test, x_test, y_pred, model):
         wandb.log({"Root Means Square Error": rmse})
         wandb.log({"R^2": r2_score})
 
+
+def createLearningCurve(x_train, y_train, model):
+    with wandb.init(project="asi_26c", job_type="evaluate", name="Learning_Curve", reinit=True) as run:
+        train_sizes, train_scores, validation_scores = learning_curve(
+            model, x_train, y_train, cv=5, scoring='r2', n_jobs=-1,
+            train_sizes=np.linspace(0.1, 1.0, 10)
+        )
+        train_scores_mean = np.mean(train_scores, axis=1)
+        validation_scores_mean = np.mean(validation_scores, axis=1)
+
+        plt.figure(figsize=(10, 6))
+        plt.plot(train_sizes, train_scores_mean, label="Training Score")
+        plt.plot(train_sizes, validation_scores_mean, label="Validation Score")
+        plt.fill_between(train_sizes, train_scores_mean - np.std(train_scores, axis=1),
+                         train_scores_mean + np.std(train_scores, axis=1), alpha=0.1)
+        plt.fill_between(train_sizes, validation_scores_mean - np.std(validation_scores, axis=1),
+                         validation_scores_mean + np.std(validation_scores, axis=1), alpha=0.1)
+
+        plt.title(f"Learning Curve: {model}")
+        plt.xlabel("Training Set Size")
+        plt.ylabel("R² Score")
+        plt.legend(loc="best")
+        plt.grid()
+        wandb.log({"learning_curve": wandb.Image(plt)})
+        plt.close()
 
 
 def evaluateCrossValidation(scores):
