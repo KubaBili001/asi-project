@@ -42,12 +42,10 @@ def predict_employee(id: int):
         'resigned', 'overtime_ratio'
     ]
 
-    # Use a map (dictionary) to store column-value pairs
     emp_map = {column: value for column, value in zip(column_list, emp[0])}
 
-    # Iterate through the map and assign values or perform other operations
     for column, value in emp_map.items():
-        print(f"{column}: {value}")  # Example: Printing each column and its value
+        print(f"{column}: {value}")
 
     prediction_values = [
         int(emp_map['department']), int(emp_map['gender']),
