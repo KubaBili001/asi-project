@@ -2,8 +2,11 @@ from typing import Union
 import joblib
 from fastapi import FastAPI
 import sqlite3
+import pandas as pd
+import numpy as np
 
-app = FastAPI()
+
+app = FastAPI(debug=True)
 joblib_in = open("C://Users//maksd//OneDrive//Pulpit//asi-project//lab3//asi-26c-4//data//06_models//regressor.pkl", "rb")
 model=joblib.load(joblib_in)
 
@@ -23,45 +26,46 @@ def predict_employee(id: int):
     conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
     cursor = conn.cursor()
 
+    # Get the schema of the employees table
+    cursor.execute("PRAGMA table_info(employees);")
+    schema = cursor.fetchall()
+    column_list = [col[1] for col in schema]
+
     query = f"SELECT * FROM employees WHERE id == {id};"
     cursor.execute(query)
     emp = cursor.fetchall()
 
-    print(emp[0][0])
+    if not emp:
+        return {"error": f"No employee found with id {id}"}
 
-    column_list = [
-        'id',
-        'department', 'gender',
-        'age', 'job_title',
-        'years_at_company', 'education_level',
-        'performance_score', 'monthly_salary',
-        'work_hours_per_week', 'projects_handled',
-        'overtime_hours', 'sick_days',
-        'remote_work_frequency', 'team_size',
-        'training_hours', 'promotions',
-        'resigned', 'overtime_ratio'
+    # Create DataFrame dynamically based on the schema
+    emp_df = pd.DataFrame(emp, columns=column_list)
+
+    # Ensure all necessary columns are converted to numeric types
+    numeric_columns = [
+        'Department', 'Gender', 'Age', 'Job_Title',
+        'Years_At_Company', 'Education_Level', 'Performance_Score',
+        'Monthly_Salary', 'Work_Hours_Per_Week', 'Projects_Handled',
+        'Overtime_Hours', 'Sick_Days', 'Remote_Work_Frequency',
+        'Team_Size', 'Training_Hours', 'Promotions', 'Overtime_Ratio'
     ]
+    for col in numeric_columns:
+        emp_df[col] = pd.to_numeric(emp_df[col], errors='coerce')
 
-    emp_map = {column: value for column, value in zip(column_list, emp[0])}
+    emp_df['Resigned'] = emp_df['Resigned'].astype(bool)
 
-    for column, value in emp_map.items():
-        print(f"{column}: {value}")
+    prediction_values = emp_df.iloc[0][[
+        'Department', 'Gender', 'Age', 'Job_Title',
+        'Years_At_Company', 'Education_Level', 'Performance_Score',
+        'Monthly_Salary', 'Work_Hours_Per_Week', 'Projects_Handled',
+        'Overtime_Hours', 'Sick_Days', 'Remote_Work_Frequency',
+        'Team_Size', 'Training_Hours', 'Promotions', 'Resigned', 'Overtime_Ratio'
+    ]].values
 
-    prediction_values = [
-        int(emp_map['department']), int(emp_map['gender']),
-        int(emp_map['age']), int(emp_map['job_title']),
-        int(emp_map['years_at_company']), int(emp_map['education_level']),
-        int(emp_map['performance_score']), float(emp_map['monthly_salary']),
-        int(emp_map['work_hours_per_week']), int(emp_map['projects_handled']),
-        int(emp_map['overtime_hours']), int(emp_map['sick_days']),
-        int(emp_map['remote_work_frequency']), int(emp_map['team_size']),
-        int(emp_map['training_hours']), int(emp_map['promotions']),
-        emp_map['resigned'],
-        float(emp_map['overtime_ratio'])
-    ]
+    prediction_values = np.array(prediction_values, dtype=float)
 
+    # Perform prediction
     prediction = model.predict([prediction_values])
 
-    return {
-        'prediction': prediction
-    }
+    return {'prediction': prediction.tolist()}
+

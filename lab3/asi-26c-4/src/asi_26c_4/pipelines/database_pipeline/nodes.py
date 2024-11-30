@@ -14,6 +14,7 @@ def create_database_table(path):
 
     df = pd.read_parquet('C://Users//maksd//OneDrive//Pulpit//asi-project//lab3//asi-26c-4//data//02_intermediate//verified_employees.pq')
     df.info()
+    df.insert(0, 'id', range(1, len(df) + 1))
 
     table_name = 'employees'
 
@@ -22,8 +23,15 @@ def create_database_table(path):
     cursor.fetchall()
 
     columns_with_types = ", ".join(
-        [f"{col.replace(' ', '_')} TEXT" for col in df.columns])  # Eg: page_id TEXT, name TEXT, urslug TEXT, ...
-    create_table_query = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns_with_types});"
+        [f"{col.replace(' ', '_')} TEXT" for col in df.columns if col != 'id'])
+
+    #create_table_query = f"CREATE TABLE IF NOT EXISTS {table_name} ({columns_with_types});"
+    create_table_query = f"""
+        CREATE TABLE IF NOT EXISTS {table_name} (
+            id INTEGER PRIMARY KEY,
+            {columns_with_types}
+        );
+    """
 
     cursor.execute(create_table_query)
     cursor.fetchall()
