@@ -12,6 +12,7 @@ def register_pipelines():
     from asi_26c_4.pipelines.machine_learning import create_pipeline as create_machine_learning_pipeline
     from asi_26c_4.pipelines.model_evaluation import create_pipeline as create_model_evaluation_pipeline
     from asi_26c_4.pipelines.autogluon import create_pipeline as create_autogluon_pipeline
+    from asi_26c_4.pipelines.database_pipeline import create_pipeline as create_database_pipeline
 
     data_processing_pipeline = create_data_processing_pipeline()
     data_verification_pipeline = create_data_verification_pipeline()
@@ -19,6 +20,7 @@ def register_pipelines():
     machine_learning_pipeline = create_machine_learning_pipeline()
     model_evaluation_pipeline = create_model_evaluation_pipeline()
     autogluon_pipeline = create_autogluon_pipeline()
+    database_pipeline = create_database_pipeline()
 
     return {
         "data_processing": data_processing_pipeline,
@@ -27,9 +29,11 @@ def register_pipelines():
         "machine_learning": machine_learning_pipeline,
         "model_evaluation": model_evaluation_pipeline,
         "autogluon" : autogluon_pipeline,
+        "database" : database_pipeline,
         "__default__": (
             data_processing_pipeline + data_verification_pipeline +
-            data_viz_pipeline + machine_learning_pipeline + model_evaluation_pipeline
-            + autogluon_pipeline
+            #data_viz_pipeline + machine_learning_pipeline + model_evaluation_pipeline
+            #+ autogluon_pipeline
+             database_pipeline
         )
     }
