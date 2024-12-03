@@ -21,8 +21,8 @@ def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
 
-@app.post('/employee/predict')
-def predict_employee(id: int):
+@app.post('/employee/predict/{emp_id}')
+def predict_employee(emp_id: int):
     conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
     cursor = conn.cursor()
 
@@ -31,17 +31,15 @@ def predict_employee(id: int):
     schema = cursor.fetchall()
     column_list = [col[1] for col in schema]
 
-    query = f"SELECT * FROM employees WHERE id == {id};"
+    query = f"SELECT * FROM employees WHERE id == {emp_id};"
     cursor.execute(query)
     emp = cursor.fetchall()
 
     if not emp:
-        return {"error": f"No employee found with id {id}"}
+        return {"error": f"No employee found with id {emp_id}"}
 
-    # Create DataFrame dynamically based on the schema
     emp_df = pd.DataFrame(emp, columns=column_list)
 
-    # Ensure all necessary columns are converted to numeric types
     numeric_columns = [
         'Department', 'Gender', 'Age', 'Job_Title',
         'Years_At_Company', 'Education_Level', 'Performance_Score',
@@ -64,7 +62,6 @@ def predict_employee(id: int):
 
     prediction_values = np.array(prediction_values, dtype=float)
 
-    # Perform prediction
     prediction = model.predict([prediction_values])
 
     return {'prediction': prediction.tolist()}
