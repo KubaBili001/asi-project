@@ -3,9 +3,3 @@
 #
 # Documentation for this file format can be found in "Parameters"
 # Link: https://docs.kedro.org/en/0.19.9/configuration/parameters.html
-
-#aws_credentials:
-#  client_kwargs:
-#    aws_access_key_id: AKIA3RYC55IWGLZK6WBX
-#    aws_secret_access_key: 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
-#    region_name: eu-north-1
