@@ -77,3 +77,33 @@ Scores_lr:
 Scores_dt:
   type: pandas.CSVDataset
   filepath: data/07_model_output/scores_dt.csv
+
+#aws_credentials:
+#  client_kwargs:
+#    aws_access_key_id: AKIA3RYC55IWGLZK6WBX
+#    aws_secret_access_key: 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
+#    region_name: eu-north-1
+
+train_data:
+  type: pandas.ParquetDataset
+  filepath: https://asi-project.s3.eu-north-1.amazonaws.com/dataset/verified_employees.pq
+  #credentials: aws_credentials
+
+x_training_data:
+  type: pandas.CSVDataset
+  filepath: s3://asi-project/dataset/x_test.csv
+  #credentials: aws_s3
+
+y_training_data:
+  type: pandas.CSVDataset
+  filepath: s3://asi-project/dataset/y_test.csv
+  #credentials: aws_s3
+
+dummy_input:
+  type: pandas.ParquetDataset
+  filepath: https://asi-project.s3.eu-north-1.amazonaws.com/dataset/verified_employees.pq
+  #credentials: aws_s3
+
+dummy_output:
+  type: MemoryDataset
+
