@@ -10,6 +10,12 @@ from .nodes import *
 def create_pipeline(**kwargs) -> Pipeline:
     return pipeline([
         node(
+            func=load_full_data,
+            inputs='employees',
+            outputs='full_data',
+            name='load_full_data',
+        ),
+        node(
             func=load_data,
             inputs="verified_employees",
             outputs="employees_data",

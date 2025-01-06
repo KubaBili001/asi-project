@@ -5,6 +5,13 @@ generated using Kedro 0.19.9
 import pandas as pd
 import joblib
 
+def load_full_data(df_or_path):
+    if isinstance(df_or_path, str):
+        return pd.read_csv(df_or_path)
+    elif isinstance(df_or_path, pd.DataFrame):
+        return df_or_path
+    else:
+        raise TypeError("Input must be a file path or a pandas DataFrame")
 
 def load_data(df_or_path):
     if isinstance(df_or_path, str):
