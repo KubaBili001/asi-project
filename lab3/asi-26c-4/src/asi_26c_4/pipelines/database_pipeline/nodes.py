@@ -9,8 +9,8 @@ import pyarrow.parquet as pa
 
 
 def create_database_table(path):
-    conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')  # Connecting to the database
-    cursor = conn.cursor()  # Object to run queries
+    conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
+    cursor = conn.cursor()
 
     df = pd.read_parquet('C://Users//maksd//OneDrive//Pulpit//asi-project//lab3//asi-26c-4//data//02_intermediate//verified_employees.pq')
     df.info()

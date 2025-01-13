@@ -5,6 +5,27 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 import joblib
+import boto3
+
+def send_metrics_to_cloudwatch(namespace, metric_name, value, unit="None"):
+    try:
+        cloudwatch = boto3.client("cloudwatch", region_name="eu-north-1")
+        response = cloudwatch.put_metric_data(
+            Namespace=namespace,
+            MetricData=[
+                {
+                    "MetricName": metric_name,
+                    "Value": value,
+                    "Unit": unit,
+                }
+            ],
+        )
+        print(f"Metric {metric_name} sent to CloudWatch: {response}")
+    except Exception as e:
+        print(f"Error sending metrics to CloudWatch: {e}")
+
+
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -36,6 +57,8 @@ if __name__ == "__main__":
     y_pred = model.predict(X_test)
     mse = mean_squared_error(y_test, y_pred)
     print(f"Mean Squared Error (MSE) na zbiorze testowym: {mse}")
+
+    send_metrics_to_cloudwatch("asi", "MSE", mse, unit="None")
 
     print(f"Zapis modelu do katalogu: {args.model_dir}")
     model_path = os.path.join(args.model_dir, "model.joblib")

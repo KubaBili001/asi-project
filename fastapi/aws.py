@@ -11,15 +11,11 @@ import os
 bucket_name = "asi-project"
 key = "training-output/sagemaker-scikit-learn-2025-01-04-14-30-00-418/output/model.tar.gz"
 local_tar_path = "model.tar.gz"
-
-s3 = boto3.client("s3")
-
-try:
-    s3.download_file(bucket_name, key, local_tar_path)
-    print(f"Model pobrany i zapisany jako {local_tar_path}")
-except Exception as e:
-    print(f"Błąd podczas pobierania pliku z S3: {e}")
-    raise
+#
+# s3 = boto3.client("s3")
+#
+# s3.download_file(bucket_name, key, local_tar_path)
+# print(f"Model pobrany i zapisany jako {local_tar_path}")
 
 extract_path = "./model"
 try:
@@ -50,24 +46,24 @@ def read_root():
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
 
-
 @app.post('/employee/predict/{emp_id}')
 def predict_employee(emp_id: int):
-    conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
-    cursor = conn.cursor()
+    file_path = 'C://Users//maksd//OneDrive//Pulpit//asi-project//lab3//asi-26c-4//data//02_intermediate//verified_employees.pq'
 
-    cursor.execute("PRAGMA table_info(employees);")
-    schema = cursor.fetchall()
-    column_list = [col[1] for col in schema]
+    df = pd.read_parquet(file_path)
 
-    query = f"SELECT * FROM employees WHERE id == {emp_id};"
-    cursor.execute(query)
-    emp = cursor.fetchall()
+    df['Employee_ID'] = range(1, len(df) + 1)
 
-    if not emp:
-        return {"error": f"No employee found with id {emp_id}"}
+    required_columns = [
+        'Employee_ID', 'Department', 'Gender', 'Age', 'Job_Title',
+        'Years_At_Company', 'Education_Level', 'Performance_Score',
+        'Monthly_Salary', 'Work_Hours_Per_Week', 'Projects_Handled',
+        'Overtime_Hours', 'Sick_Days', 'Remote_Work_Frequency',
+        'Team_Size', 'Training_Hours', 'Promotions', 'Resigned', 'Overtime_Ratio'
+    ]
+    df = df[required_columns]
 
-    emp_df = pd.DataFrame(emp, columns=column_list)
+    emp_df = df[df['Employee_ID'] == emp_id]
 
     numeric_columns = [
         'Department', 'Gender', 'Age', 'Job_Title',

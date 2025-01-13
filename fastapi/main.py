@@ -26,7 +26,6 @@ def predict_employee(emp_id: int):
     conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
     cursor = conn.cursor()
 
-    # Get the schema of the employees table
     cursor.execute("PRAGMA table_info(employees);")
     schema = cursor.fetchall()
     column_list = [col[1] for col in schema]
@@ -34,6 +33,7 @@ def predict_employee(emp_id: int):
     query = f"SELECT * FROM employees WHERE id == {emp_id};"
     cursor.execute(query)
     emp = cursor.fetchall()
+    print(emp)
 
     if not emp:
         return {"error": f"No employee found with id {emp_id}"}
@@ -64,5 +64,5 @@ def predict_employee(emp_id: int):
 
     prediction = model.predict([prediction_values])
 
-    return {'prediction': prediction.tolist()}
+    return {'prediction': prediction.tolist(), 'attribitues:': prediction_values.tolist()}
 
