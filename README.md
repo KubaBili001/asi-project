@@ -113,7 +113,7 @@ Streamlit korzysta z wytrenowanego modelu regresji liniowej i danych załadowany
 ## Wygląd głównego widoku aplikacji: 
 
 <div align="center">
-  <img src="(https://github.com/user-attachments/assets/a4509eea-de52-4aca-8c78-f8b386e899da)" alt="image" />
+  <img src="![image](https://github.com/user-attachments/assets/48dbb5b1-1399-433d-98e9-393926307c68)" alt="image" />
 </div>
 
 ---
