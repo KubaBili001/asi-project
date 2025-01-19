@@ -62,14 +62,23 @@ Potok projektu został zorganizowany w ramach Kedro i obejmuje następujące eta
 3. **Operacje na Danych**:
    - Standaryzacja i kodowanie zmiennych.
 
-4. **Integracja z Bazą Danych**:
+4. **Wizualizacja danych**:
+   -Stworzenie wykresów w celu wizualizacji danych.
+
+5. **Integracja z Bazą Danych**:
    - Wczytanie danych do tabeli SQLite `employees`.
 
-5. **Trening Modeli**:
+6. **Trening Modeli**:
    - Trening modeli regresji liniowej, drzewa decyzyjnego oraz Random Forest.
 
-6. **Ewaluacja Modeli**:
+7. **Ewaluacja Modeli**:
    - Porównanie skuteczności modeli na podstawie miar, takich jak R² i RMSE.
+
+8. **Trening modelu w chmurze**:
+   - Wytrenowanie modelu za pomocą Amazon SageMaker przy użyciu danych przetrzymywanych w Amazon S3.
+
+9. **Streamlit**:
+   - Załadowanie danych i wytrenowanego modelu do aplikacji streamlit
 
 ---
 
