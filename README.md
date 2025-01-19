@@ -98,7 +98,7 @@ Aplikacja Streamlit oferuje następujące funkcje:
 
 1. **Predykcja dla Nowych Danych**:
    - Użytkownik wprowadza dane nowego pracownika, a model regresji liniowej wykonuje predykcję satysfakcji.
-   - Nowe dane wraz z wynikiem predykcji są zapisywane w bazie danych.
+   - Nowe dane pracownika są zapisywane w bazie danych.
 
 2. **Eksploracja Danych**:
    - Wyświetlanie statystyk opisowych dla kolumn danych.
@@ -124,7 +124,7 @@ W celu monitorowania procesu uczenia maszynowego wykorzystano platformę Weights
 - **Feature Importance**: Kluczowe cechy używane przez model regresji liniowej.
 - **Wizualizacje**: Wykresy łączące wyniki predykcji z rzeczywistymi wartościami.
 - **Training score**: Wynik otrzymany podczas treningu modelu.
-- **Miary ewaluacji modelu**: Miary RMSE oraz R^2.
+- **Miary ewaluacji modelu**: Miary RMSE oraz R².
 
 Logi i wizualizacje są dostępne na koncie projektu w wandb.
 
