@@ -9,7 +9,7 @@ Celem projektu było zbadanie możliwości przewidywania satysfakcji pracownikó
 - Przetwarzanie danych wejściowych i analiza wstępna.
 - Wykorzystanie potoku Kedro do organizacji procesu przetwarzania danych, treningu modeli oraz ich ewaluacji.
 - Budowa aplikacji Streamlit, pozwalającej na:
-  - Przeprowadzanie predykcji dla nowych danych.
+  - Przeprowadzanie predykcji dla nowych danych lub istniejących już pracowników.
   - Eksplorację i wizualizację danych.
 - Integracja z bazą danych SQLite do zarządzania danymi.
 - Monitorowanie procesu przy pomocy platformy Weights & Biases (wandb).
