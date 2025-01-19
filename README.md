@@ -63,7 +63,7 @@ Potok projektu został zorganizowany w ramach Kedro i obejmuje następujące eta
    - Standaryzacja i kodowanie zmiennych.
 
 4. **Wizualizacja danych**:
-   -Stworzenie wykresów w celu wizualizacji danych.
+   - Stworzenie wykresów w celu wizualizacji danych.
 
 5. **Integracja z Bazą Danych**:
    - Wczytanie danych do tabeli SQLite `employees`.
@@ -79,6 +79,12 @@ Potok projektu został zorganizowany w ramach Kedro i obejmuje następujące eta
 
 9. **Streamlit**:
    - Załadowanie danych i wytrenowanego modelu do aplikacji streamlit
+
+## Wizualizacja całego potoku:
+
+<div align="center">
+  <img src="![kedro-pipeline (1)](https://github.com/user-attachments/assets/49144b53-dbf8-48bb-b671-185602325102)" alt="image" />
+</div>
 
 ---
 
