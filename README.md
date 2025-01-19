@@ -90,6 +90,7 @@ Potok projektu został zorganizowany w ramach Kedro i obejmuje następujące eta
 ## Integracja z Bazą Danych
 
 Projekt korzysta z bazy danych SQLite do przechowywania danych pracowników. Dane wejściowe w formacie Parquet są wczytywane i zapisywane w tabeli `employees`. W aplikacji Streamlit nowe dane można dodawać do bazy poprzez formularz.
+
 ---
 
 ## Opis Aplikacji Streamlit
