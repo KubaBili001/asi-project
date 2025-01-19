@@ -16,7 +16,7 @@ Celem projektu było zbadanie możliwości przewidywania satysfakcji pracownikó
 - Monitorowanie procesu przy pomocy platformy Weights & Biases (wandb).
 
 ### Rezultaty
-Stworzono aplikację Streamlit korzystającą z potoków Kedro, wytrenowany model regresji liniowej oraz API FastAPI do predykcji na podstawie ID pracownika. Dodatkowo dodany został trening modelu w chmruze, przy użyciu danych znajdujących się w bazie Amazon S3. Logika potoku obejmuje pełny proces od przetwarzania danych po ewaluację modeli.
+Stworzono aplikację Streamlit korzystającą z potoków Kedro, wytrenowany model regresji liniowej oraz API FastAPI do predykcji na podstawie ID pracownika. Dodatkowo dodany został trening modelu w chmruze, przy użyciu danych znajdujących się w bazie Amazon S3 oraz wykorzystana została biblioteka AutoGluon w celu znalezienia najbardziej optymalnego modelu. Logika potoku obejmuje pełny proces od przetwarzania danych po ewaluację modeli.
 
 ---
 
@@ -40,7 +40,7 @@ Stworzono aplikację Streamlit korzystającą z potoków Kedro, wytrenowany mode
 4. **Uruchomienie Aplikacji Streamlit**:
    Przejdź do katalogu \lab3\asi-26c-4\src\streamlit
    ```bash
-   streamlit run app.py
+   streamlit run run.py
    ```
 
 5. **Uruchomienie FastAPI** (opcjonalnie):
@@ -78,7 +78,10 @@ Potok projektu został zorganizowany w ramach Kedro i obejmuje następujące eta
 8. **Trening modelu w chmurze**:
    - Wytrenowanie modelu za pomocą Amazon SageMaker przy użyciu danych przetrzymywanych w Amazon S3.
 
-9. **Streamlit**:
+9. **AutoGlon**:
+   - Wykorzystanie AutoGlon w celu prostego treningu wielu modeli
+
+10. **Streamlit**:
    - Załadowanie danych i wytrenowanego modelu do aplikacji streamlit
 
 ## Wizualizacja całego potoku:
@@ -135,5 +138,5 @@ Projekt pozwala na wykonanie predykcji satysfakcji pracowników. Zintegrowano na
 
 Dane pracowników są przechowywane w tabeli SQLite employees, co umożliwia zarządzanie danymi oraz dodawanie nowych rekordów wraz z wynikami predykcji. Aplikacja Streamlit pozwala na eksplorację danych, wizualizacje oraz wykonywanie predykcji. Ponadto, zaimplementowano FastAPI, umożliwiające predykcję dla pracownika na podstawie jego ID.
 
-Projekt wspiera także monitorowanie procesu uczenia w chmurze za pomocą Amazon SageMaker, co umożliwia skalowanie procesów analitycznych i uczenia maszynowego. Platforma Weights & Biases (wandb) dodatkowo zapewnia wizualizację oraz monitorowanie wyników i metryk, co wzbogaca proces analizy.
+Projekt wspiera także wykonywanie procesu uczenia w chmurze za pomocą Amazon SageMaker oraz wykorzystuje bazę Amazon S3. Platforma Weights & Biases (wandb) dodatkowo zapewnia wizualizację oraz monitorowanie wyników i metryk, co wzbogaca proces analizy.
 
