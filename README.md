@@ -1,4 +1,4 @@
-![kedro-pipeline](https://github.com/user-attachments/assets/640d6371-0419-40b6-8670-c58f04646ded)# Przewidywanie Satysfakcji Pracowników
+# Przewidywanie Satysfakcji Pracowników
 
 ## Opis Projektu
 
