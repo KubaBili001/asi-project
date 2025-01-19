@@ -82,9 +82,7 @@ Potok projektu został zorganizowany w ramach Kedro i obejmuje następujące eta
 
 ## Wizualizacja całego potoku:
 
-<div align="center">
-  <img src="![kedro-pipeline (1)](https://github.com/user-attachments/assets/49144b53-dbf8-48bb-b671-185602325102)" alt="image" />
-</div>
+<img src="(https://github.com/user-attachments/assets/3523dc5b-8acf-49f8-9f7e-eb1620c0fc7d)" alt="image" />
 
 ---
 
