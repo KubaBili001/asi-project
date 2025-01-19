@@ -95,7 +95,10 @@ Aplikacja Streamlit oferuje następujące funkcje:
    - Pobieranie danych pracownika z bazy na podstawie jego ID i wykonywanie predykcji przy pomocy API FastAPI.
 
 Streamlit korzysta z wytrenowanego modelu regresji liniowej i danych załadowanych w ramach potoków Kedro.
-![image](https://github.com/user-attachments/assets/27bdc7f7-1ed2-4f53-9441-b4620e78274a)
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/27bdc7f7-1ed2-4f53-9441-b4620e78274a" alt="image" />
+</div>
+
 
 ---
 
