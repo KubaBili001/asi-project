@@ -1,13 +1,19 @@
-ipython>=8.10
-jupyterlab>=3.0
-kedro~=0.19.9
-kedro-datasets>=3.0; python_version >= "3.9"
-kedro-datasets>=1.0; python_version < "3.9"
-kedro-viz>=6.7.0
-kedro[jupyter]
-notebook
-scikit-learn~=1.5.1; python_version >= "3.9"
-scikit-learn<=1.4.0,>=1.0; python_version < "3.9"
-setuptools; python_version >= "3.12"
-autogluon==1.0.0
-fastapi==0.0.5
+boto3==1.36.2
+joblib==1.4.2
+kedro==0.19.10
+kedro_viz==10.1.0
+matplotlib==3.10.0
+numpy==2.2.2
+pandas==2.2.3
+pyarrow==18.0.0
+pyspark==3.5.4
+pytest==8.3.4
+sagemaker==2.237.3
+scikit_learn==1.6.1
+seaborn==0.13.2
+autogluon == 1.2
+fastapi == 0.115.6
+streamlit == 1.40.1
+wandb == 0.19.4
+pyspark == 3.5.4
+sagemaker == 2.237.3

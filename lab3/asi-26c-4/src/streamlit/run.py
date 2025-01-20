@@ -13,7 +13,7 @@ from kedro.framework.startup import bootstrap_project
 wandb.login()
 wandb_run = wandb.init(project="employee-prediction", name="streamlit-pipeline-enhanced")
 
-project_path = r"C:\Users\maksd\OneDrive\Pulpit\asi-project\lab3\asi-26c-4"
+project_path = r"C:\Users\maksd\Desktop\asi-project\lab3\asi-26c-4"
 bootstrap_project(project_path)
 session = KedroSession.create()
 context = session.load_context()
@@ -40,7 +40,7 @@ st.title("Interaktywna aplikacja ML - Streamlit + Kedro")
 tabs = st.tabs(["Predykcja", "Trenuj Model", "Eksploracja danych"])
 
 def add_employee_to_db(employee_data):
-    conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
+    conn = sqlite3.connect('C://Users//maksd//Desktop//asi-project//database//asidatabase.db')
     cursor = conn.cursor()
 
     cursor.execute("SELECT MAX(ID) FROM employees")
@@ -174,7 +174,7 @@ with tabs[1]:
     st.header("Trenuj model")
 
     if st.button("Rozpocznij trening modelu"):
-        project_path = r"C:\Users\maksd\OneDrive\Pulpit\asi-project\lab3\asi-26c-4"
+        project_path = r"C:\Users\maksd\Desktop\asi-project\lab3\asi-26c-4"
         bootstrap_project(project_path)
         session = KedroSession.create()
         context = session.load_context()
@@ -197,7 +197,7 @@ with tabs[1]:
 with tabs[2]:
     st.header("Eksploracja danych")
 
-    conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
+    conn = sqlite3.connect('C://Users//maksd//Desktop//asi-project//database//asidatabase.db')
     df_explore = pd.read_sql_query("SELECT * FROM employees", conn)
     conn.close()
 

@@ -37,11 +37,11 @@ def register_pipelines():
         "aws_training": aws_training_pipeline,
         "streamlit": streamlit_pipeline,
         "__default__": (
-            #data_processing_pipeline + data_verification_pipeline +
-            #data_viz_pipeline + machine_learning_pipeline + model_evaluation_pipeline
+            data_processing_pipeline + data_verification_pipeline +
+            data_viz_pipeline + machine_learning_pipeline + model_evaluation_pipeline
             #+ autogluon_pipeline
-            # database_pipeline
-            #aws_training_pipeline
-            streamlit_pipeline
+            + database_pipeline
+            #+ aws_training_pipeline
+            + streamlit_pipeline
         )
     }

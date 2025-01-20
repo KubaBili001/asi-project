@@ -9,10 +9,10 @@ import pyarrow.parquet as pa
 
 
 def create_database_table(path):
-    conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
+    conn = sqlite3.connect('C://Users//maksd//Desktop//asi-project//database//asidatabase.db')
     cursor = conn.cursor()
 
-    df = pd.read_parquet('C://Users//maksd//OneDrive//Pulpit//asi-project//lab3//asi-26c-4//data//02_intermediate//verified_employees.pq')
+    df = pd.read_parquet('C://Users//maksd//Desktop//asi-project//lab3//asi-26c-4//data//02_intermediate//verified_employees.pq')
     df.info()
     df.insert(0, 'id', range(1, len(df) + 1))
 
