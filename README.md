@@ -28,8 +28,8 @@ Stworzono aplikację Streamlit korzystającą z potoków Kedro, wytrenowany mode
    cd <repozytorium>
    ```
 
-2. **Instalacja Wymagań**:
-   Wykonaj (Projekt został wykonany przy użyciu Pythona 3.12, a wszystkie biblioteki są dostosowane pod tą werjsę):
+2. **Instalacja Wymagań (Projekt został wykonany przy użyciu Pythona 3.12, a wszystkie biblioteki są dostosowane pod tą werjsę)**:
+   Wykonaj:
    ```bash
    pip install -r requirements.txt
    ```
