@@ -37,16 +37,16 @@ Stworzono aplikację Streamlit korzystającą z potoków Kedro, wytrenowany mode
 3. **Konfiguracja Bazy Danych**:
    W pliku konfiguracji podaj ścieżkę do pliku SQLite, np. `data/employees.db`. Dane wejściowe powinny być w formacie Parquet.
 
-4. **Uruchomienie Aplikacji Streamlit**:
-   Przejdź do katalogu \lab3\asi-26c-4\src\streamlit
-   ```bash
-   streamlit run run.py
-   ```
-
-5. **Uruchomienie FastAPI** (opcjonalnie):
+4. **Uruchomienie FastAPI**:
    Przejdź do katalogu \fastapi
    ```bash
    fastapi dev main.py
+   ```
+
+5. **Uruchomienie Aplikacji Streamlit**:
+   Przejdź do katalogu \lab3\asi-26c-4\src\streamlit
+   ```bash
+   streamlit run run.py
    ```
 
 ---
