@@ -7,7 +7,7 @@ import numpy as np
 
 
 app = FastAPI(debug=True)
-joblib_in = open("C://Users//maksd//OneDrive//Pulpit//asi-project//lab3//asi-26c-4//data//06_models//regressor.pkl", "rb")
+joblib_in = open("C://Users//maksd//Desktop//asi-project//lab3//asi-26c-4//data//06_models//regressor.pkl", "rb")
 model=joblib.load(joblib_in)
 
 
@@ -23,7 +23,7 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 @app.post('/employee/predict/{emp_id}')
 def predict_employee(emp_id: int):
-    conn = sqlite3.connect('C://Users//maksd//OneDrive//Pulpit//asi-project//database//asidatabase.db')
+    conn = sqlite3.connect('C://Users//maksd//Desktop//asi-project//database//asidatabase.db')
     cursor = conn.cursor()
 
     cursor.execute("PRAGMA table_info(employees);")

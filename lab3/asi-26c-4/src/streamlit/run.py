@@ -9,6 +9,7 @@ from sklearn.preprocessing import LabelEncoder
 from sklearn.metrics import mean_absolute_error, mean_squared_error
 import numpy as np
 from kedro.framework.startup import bootstrap_project
+import requests
 
 wandb.login()
 wandb_run = wandb.init(project="employee-prediction", name="streamlit-pipeline-enhanced")
@@ -98,14 +99,35 @@ with tabs[0]:
             value=0
         )
         if st.button("Uruchom predykcję na danych pracownika"):
-            employee_data = df.iloc[employee_id]
-            st.write("Dane pracownika:")
-            st.dataframe(employee_data.to_frame().T)
+            try:
+                response = requests.post(f"http://127.0.0.1:8000/employee/predict/{employee_id}")
+                if response.status_code == 200:
+                    result = response.json()
+                    if "error" in result:
+                        st.error(result["error"])
+                    else:
+                        prediction = result["prediction"]
+                        attributes = result["attribitues:"]
 
-            prediction = model.predict(employee_data.to_frame().T)
-            st.header("2. Wynik predykcji")
-            st.write(f"Predykcja modelu: {prediction[0]}")
-            visualize_and_log_prediction(employee_data.to_frame().T, prediction)
+                        st.header("2. Wynik predykcji")
+                        st.write(f"Predykcja modelu: {prediction[0]}")
+
+                        attributes_df = pd.DataFrame([attributes], columns=[
+                            'Department', 'Gender', 'Age', 'Job_Title',
+                            'Years_At_Company', 'Education_Level', 'Performance_Score',
+                            'Monthly_Salary', 'Work_Hours_Per_Week', 'Projects_Handled',
+                            'Overtime_Hours', 'Sick_Days', 'Remote_Work_Frequency',
+                            'Team_Size', 'Training_Hours', 'Promotions', 'Resigned', 'Overtime_Ratio'
+                        ])
+                        st.write("Dane wejściowe do modelu:")
+                        st.dataframe(attributes_df)
+
+                        visualize_and_log_prediction(attributes_df, prediction)
+                else:
+                    st.error(f"Błąd podczas komunikacji z API: {response.status_code}")
+            except Exception as e:
+                st.error(f"Wystąpił błąd: {e}")
+
 
     elif prediction_mode == "Wprowadź własne dane":
         st.header("Wprowadź dane wejściowe do predykcji")
