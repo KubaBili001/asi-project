@@ -16,7 +16,7 @@ Celem projektu było zbadanie możliwości przewidywania satysfakcji pracownikó
 - Monitorowanie procesu przy pomocy platformy Weights & Biases (wandb).
 
 ### Rezultaty
-Stworzono aplikację Streamlit korzystającą z potoków Kedro, wytrenowany model regresji liniowej oraz API FastAPI do predykcji na podstawie ID pracownika. Dodatkowo dodany został trening modelu w chmruze, przy użyciu danych znajdujących się w bazie Amazon S3 oraz wykorzystana została biblioteka AutoGluon w celu znalezienia najbardziej optymalnego modelu. Logika potoku obejmuje pełny proces od przetwarzania danych po ewaluację modeli.
+Stworzono pełną aplikację MLOps przy użyciu Streamlit korzystającą z potoków Kedro, wytrenowany model regresji liniowej oraz API FastAPI do predykcji na podstawie ID pracownika. Dodatkowo dodany został trening modelu w chmruze, przy użyciu danych znajdujących się w bazie Amazon S3 oraz wykorzystana została biblioteka AutoGluon w celu znalezienia najbardziej optymalnego modelu. Logika potoku obejmuje pełny proces od przetwarzania danych po ewaluację modeli.
 
 ---
 
