@@ -29,7 +29,7 @@ Stworzono aplikację Streamlit korzystającą z potoków Kedro, wytrenowany mode
    ```
 
 2. **Instalacja Wymagań**:
-   Wykonaj:
+   Wykonaj (Projekt został wykonany przy użyciu Pythona 3.12, a wszystkie biblioteki są dostosowane pod tą werjsę):
    ```bash
    pip install -r requirements.txt
    ```
